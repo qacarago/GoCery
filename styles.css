@@ -419,3 +419,75 @@ aside img {
     font-family: Moon;
     src: url(Font/Moon.otf);
 }
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+
+/* The Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Product Details in Modal */
+#modal-product-details img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+#modal-product-details h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+#modal-product-details h3 {
+    color: #e65c00; /* Example: Orange/Red for price */
+    font-size: 1.8em;
+}
+
+#add-to-cart-btn {
+    background-color: #e65c00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
