@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Utendo;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "navbar navbar"
+    "sidebar main"
+    "sidebar footer";
+}
+
+nav{
+    height: 5rem;
+    top: 0;
+    position: sticky;
+    grid-area: navbar;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+aside{
+    height: calc(100vh - 7rem);
+    top: 5rem;
+    position: sticky;
+    align-self: start;
+    grid-area: sidebar;
+    background-color: white;
+    padding: 1rem;
+}
+
+main {
+    grid-area: main;
+    background: rgb(235, 232, 232);
+    padding: 1rem;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "email socials"
+    "links copyright";
+    grid-area: footer;
+    background: red;
+    padding: 2rem;
+    color: white;
+}
+
+#navbtn {
+    display: none;
+    background: rgba(255, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+#navbtn img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: invert(100%);
+}
+
+#navlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navlogo img {
+    width: auto;
+    height: 4rem;
+}
+
+#navlogo h1 {
+    font-family: Moon;
+    padding: 0rem 1rem;
+}
+
+#navlog {
+    display: flex;
+    align-items: center;
+}
+
+#navlog button {
+    padding: .5rem 1rem;
+    background: white;
+    color: red;
+    border: none;
+    border-radius: 6px;
+    margin: 0.1rem .5rem;
+}
+
+#navlog img {
+    padding: 0.5rem;
+    height: 2rem;
+    width: auto;
+    object-fit: cover;
+    filter: invert(100%);
+}
+
+#loc {
+    display: flex;
+    align-items: center;
+}
+
+#loc * {
+    font-size: 1rem;
+}
+
+#loc img {
+    margin: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+}
+
+nav #search {
+    padding: .5rem 1rem;
+    width: 20rem;
+    border: none;
+    border-radius: 6px;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+aside li {
+    padding: .5rem;
+    list-style-type: none;
+    padding: .5rem 1rem;
+}
+
+aside a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+aside a:hover {
+    color: red;
+}
+
+aside #sidehead {
+    color: red;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+aside p {
+    padding: 1rem;
+}
+
+aside img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    padding: 0 1rem;
+}
+
+#reg {
+    padding: 1rem;
+}
+
+.heading {
+    padding: 1rem;
+}
+
+.heading * {
+    color: red;
+    text-decoration: none;
+}
+
+#welcome {
+    width: stretch;
+    padding: 1rem;
+    margin: 1rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#cat {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#home {
+    color: black;
+    font-size: 1.3rem;
+}
+
+#divider {
+    display: grid;
+    gap: 1rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-areas: 
+    "login register";
+}
+
+#divider .part {
+    display: grid;
+    grid-row: span 6;
+    grid-template-rows: subgrid;
+    border-radius: 8px;
+    background-color: white;
+    padding: 3rem;
+}
+
+.part h1 {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.part input[type="text"] {
+    width: stretch;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgb(202, 197, 197);
+}
+
+.login {
+    grid-area: login;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+}
+
+.register {
+    grid-area: register;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+
+#loginbtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#loginbtn a {
+    text-decoration: none;
+    color: black;
+}
+
+#loginbtn button {
+    padding: 1rem 1.5rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 0.1rem .5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#registerbtn button {
+    padding: 1rem 1.5rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 0.1rem .5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#email {
+    grid-area: email;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+#footbtn {
+    display: flex;
+}
+
+#footbtn input[type="text"] {
+    width: stretch;
+    border: none;
+    border-radius: 6px;
+}
+
+#footbtn button {
+    padding: .5rem 1rem;
+    background: white;
+    color: red;
+    border: none;
+    border-radius: 6px;
+    margin: 0.1rem .5rem;
+}
+
+#socials {
+    grid-area: socials;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    align-items: right;
+}
+
+#socialicon {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+
+#socialicon img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    filter: invert(100%);
+    margin: 0 0.5rem;  
+}
+
+#socialicon #block {
+    flex-basis: 100%;
+    text-align: right;
+}
+
+#links {
+    grid-area: links;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+}
+
+#links ul {
+    list-style-type: none;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+#links li {
+    margin-bottom: 0.5rem;
+}
+
+#links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+#copyright {
+    grid-area: copyright;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+#copyright h1 {
+    text-align: right;
+}
+
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "navbar"
+        "main"
+        "footer";
+    }
+
+    #divider {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "login"
+        "register";
+    }
+
+    aside {
+        position: fixed;
+        width: 300px;
+        display: none;
+    }
+
+    #loc {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
+    #navbtn {
+        display: inline;
+    }
+    
+    aside {
+        z-index: 999;
+    }
+
+    nav #search {
+        display: none;
+    }
+}
+
+@media (max-width: 940px) {
+    footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "email email"
+        "links socials"
+        "links copyright"
+    }
+
+    footer h1 {
+        font-size: 1rem;
+    }
+
+    #links a {
+        font-size: 1rem;
+    }
+}
+
+@font-face {
+    font-family: Utendo;
+    src: url(Font/Utendo.ttf);
+}
+
+@font-face {
+    font-family: Moon;
+    src: url(Font/Moon.otf);
+}
