@@ -84,7 +84,7 @@ nav {
 }
 
 #navlog img {
-    height: 1.5rem;
+    height: 2rem;
     width: auto;
     object-fit: cover;
     filter: invert(100%);
