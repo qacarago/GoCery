@@ -596,71 +596,6 @@ footer {
 }
 
 
-/* Responsive Configuration */
-@media (max-width: 800px) {
-    body {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "navbar"
-        "main"
-        "footer";
-    }
-
-    aside {
-        position: fixed;
-        width: 300px;
-        display: none;
-    }
-
-    #loc {
-        display: none;
-    }
-
-    .show {
-        display: block;
-    }
-
-    #navbtn {
-        display: inline;
-    }
-    
-    aside {
-        z-index: 999;
-    }
-
-    nav #search {
-        display: none;
-    }
-
-    .modal-product-details {
-        flex-direction: column;
-        align-items: center;
-    }
-    .modal-image-container {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 940px) {
-    footer {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas:
-        "email email"
-        "links socials"
-        "links copyright"
-    }
-
-    footer h1 {
-        font-size: 1rem;
-    }
-
-    #links a {
-        font-size: 1rem;
-    }
-}
-
 /* --- Modal Styling --- */
 .modal {
     display: none;
@@ -779,3 +714,77 @@ footer {
     border-radius: 5px;
 }
 
+
+/* Responsive Configuration */
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "navbar"
+        "main"
+        "footer";
+    }
+
+    aside {
+        position: fixed;
+        width: 300px;
+        display: none;
+    }
+
+    #loc {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
+    #navbtn {
+        display: inline;
+    }
+    
+    aside {
+        z-index: 999;
+    }
+
+    nav #search {
+        display: none;
+    }
+
+    .modal {
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal-product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-image-container {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 940px) {
+    footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "email email"
+        "links socials"
+        "links copyright"
+    }
+
+    footer h1 {
+        font-size: 1rem;
+    }
+
+    #links a {
+        font-size: 1rem;
+    }
+}
