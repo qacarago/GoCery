@@ -84,8 +84,7 @@ nav {
 }
 
 #navlog img {
-    padding: 0.5rem;
-    height: 2rem;
+    height: 1.5rem;
     width: auto;
     object-fit: cover;
     filter: invert(100%);
@@ -423,7 +422,7 @@ main {
 #divider {
     display: grid;
     gap: 1rem 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-areas: 
     "login register";
 }
@@ -747,9 +746,9 @@ footer {
         z-index: 999;
     }
 
-    nav #search {
-        display: none;
-    }
+    .message h1 {
+    font-size: 1.5rem;
+}
 }
 
 @media (max-width: 940px) {
@@ -786,5 +785,16 @@ footer {
     .modal-image-container {
         max-width: 100%;
         margin-bottom: 20px;
+    }
+
+    #divider {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "login"
+        "register";
+    }
+
+    nav #search {
+        display: none;
     }
 }
