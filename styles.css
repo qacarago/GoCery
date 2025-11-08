@@ -750,24 +750,6 @@ footer {
     nav #search {
         display: none;
     }
-
-    .modal {
-        display: flex;
-        align-items: center;
-    }
-
-    .modal-content {
-        padding: 1rem;
-    }
-
-    .modal-product-details {
-        flex-direction: column;
-        align-items: center;
-    }
-    .modal-image-container {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
 }
 
 @media (max-width: 940px) {
@@ -786,5 +768,23 @@ footer {
 
     #links a {
         font-size: 1rem;
+    }
+
+    .modal {
+        display: flex;
+        align-items: center;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal-product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-image-container {
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 }
