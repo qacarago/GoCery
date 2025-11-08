@@ -19,8 +19,8 @@
             </div>
             <input id="search" type="text" placeholder="Search product here...">
             <div id="navlog">
-                <a href="Account.html"><img src="Category/userlogo.png"></a>
-                <a href=""><img src="Category/shopping-cart.png"></a>
+                <button onclick="user()"><img src="Category/userlogo.png" alt="user icon"></button>
+                <button onclick="cart()"><img src="Category/shopping-cart.png"></button>
             </div>
         </nav>
         <aside id="sidebar">
@@ -41,43 +41,62 @@
                     <button onclick="beverages()"><img src="Category/redsoda.png" alt="beverages icon">Beverages</button>
                 </li>
                 <li>
-                    <button onclick="snacks()"><img src="Category/redsnack.png" alt="snacks icon">snacks</button>
+                    <button onclick="snacks()"><img src="Category/redsnack.png" alt="snacks icon">Snacks</button>
                 </li>
             </ul>
         </aside>
         <main>
+
             <!-- Home Page -->
             <div id="home-page">
                 <div class="heading">
-                    <p><a href="index.html" id="home">Home /</p>
+                    <p><a href="#" id="home" onclick="home()">Home /</p>
                     <h1>Home</h1>
                 </div>
                 <section class="catorangered">
                     <div class="message">
                         <h1>Ready to Eat</h1>
-                        <a href="ReadytoEat.html"><h1>See more.</h1></a>
+                        <a href="#" onclick="readyToEat()"><h1>See more.</h1></a>
                     </div>
                     <div class="product-list">
                         <div class="products">
-                            <a href=""> <img src="Product/KarneNorteCornedBeef.jpg" alt=""> </a>
+                            <img src="Product/KarneNorteCornedBeef.jpg" alt="" onclick="openModal(
+                            'Karne Norte Corned Beef', 
+                            'Product/KarneNorteCornedBeef.jpg', 
+                            '₱ 29.00', 
+                            'A classic budget corned beef, savory and excellent for a quick, filling meal. A pantry staple!', 
+                            '175g'
+                            )">
                             <span class="weight"><p>175g</p></span>
                             <p> Karne Norte Corned Beef </p>
                             <h4> ₱ 29.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/555.jpg" alt=""> </a>
+                            <img src="Product/555.jpg" alt="" onclick="openModal('555 Sardines',
+                            'Product/555.jpg',
+                            '₱ 23.00',
+                            'Delicious sardines in tomato sauce, packed with flavor and essential nutrients. Great for quick cooking.', 
+                            '155g')">
                             <span class="weight"><p>155g</p></span>
                             <p> 555 Sardines </p>
                             <h4> ₱ 23.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/MaLingLuncheonMeat.jpg" alt=""> </a>
+                            <img src="Product/MaLingLuncheonMeat.jpg" alt="" onclick="openModal('Maling Pork Luncheon Meat',
+                            'Product/MaLingLuncheonMeat.jpg', 
+                            '₱ 117.00', 
+                            'High-quality luncheon meat perfect for frying, sandwiches, or adding to fried rice and pasta.', 
+                            '100g')">
                             <span class="weight"><p>100g</p></span>
                             <p> Maling Luncheon Meat </p>
                             <h4> ₱ 117.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/DelimondoCornedBeef.jpg" alt=""> </a>
+                            <img src="Product/DelimondoCornedBeef.jpg" alt="" onclick="openModal('Delimondo Corned Beef', 
+                            'Product/DelimondoCornedBeef.jpg', 
+                            '₱ 139.00', 
+                            'Premium quality corned beef, known for its chunky, flavorful meat texture. A gourmet choice.', 
+                            '380g')">
                             <span class="weight"><p>380g</p></span>
                             <p> Delimondo Corned Beef </p>
                             <h4> ₱ 139.00 </h4>
@@ -87,29 +106,53 @@
                 <section class="catorange">
                     <div class="message">
                         <h1>Beverages</h1>
-                        <a href="Beverages.html"><h1>See more.</h1></a>
+                        <a href="#" onclick="beverages()"><h1>See more.</h1></a>
                     </div>
                     <div class="product-list">
                         <div class="products">
-                            <a href=""> <img src="Product/KOPIKO (LUCKY DAY).PNG" alt=""> </a>
+                            <img src="Product/KOPIKO (LUCKY DAY).PNG" alt="" onclick="openModal(
+                               'Kopiko Lucky Day', 
+                               'Product/KOPIKO (LUCKY DAY).PNG', 
+                               '₱ 45.00', 
+                               'Ready-to-drink iced coffee with a bold, rich taste to give you the energy boost you need.', 
+                               '100g'
+                           )">
                             <span class="weight"><p>180g</p></span>
                             <p> Kopiko Lucky Day </p>
                             <h4> ₱ 45.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/nestea apple.jpeg" alt=""> </a>
+                            <img src="Product/nestea apple.jpeg" alt="" onclick="openModal(
+                               'Nestea Apple', 
+                               'Product/nestea apple.jpeg', 
+                               '₱ 262.00', 
+                               'A refreshing iced tea mix with the crisp, sweet flavor of real apple. Great for sharing!', 
+                               '100g'
+                           )">
                             <span class="weight"><p>20g</p></span>
                             <p> Nestea Apple </p>
                             <h4> ₱ 262.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/TANG.JPG" alt=""> </a>
+                            <img src="Product/TANG.JPG" alt="" onclick="openModal(
+                               'Tang Orange Mango', 
+                               'Product/TANG.JPG', 
+                               '₱ 100.00', 
+                               'Vitamin C-packed powdered juice drink in a sweet and tangy orange mango flavor.', 
+                               '100g'
+                           )">
                             <span class="weight"><p>20g</p></span>
                             <p> Tang Orange Mango </p>
                             <h4> ₱ 100.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/sting.jpeg" alt=""> </a>
+                            <img src="Product/sting.jpeg" alt="" onclick="openModal(
+                               'Sting Strawberry Flavor', 
+                               'Product/sting.jpeg', 
+                               '₱ 22.00', 
+                               'An energy drink with a vibrant strawberry flavor, providing a quick lift and refreshing taste.', 
+                               '100g'
+                           )">
                             <span class="weight"><p>320g</p></span>
                             <p> Sting Strawberry Flavor </p>
                             <h4> ₱ 22.00 </h4>
@@ -119,29 +162,53 @@
                 <section class="catyellow">
                     <div class="message">
                         <h1>Snacks</h1>
-                        <a href="Snacks.html"><h1>See more.</h1></a>
+                        <a href="#" onclick="snacks()"><h1>See more.</h1></a>
                     </div>
                     <div class="product-list">
                         <div class="products">
-                            <a href=""> <img src="Product/Fita.png" alt=""> </a>
+                            <img src="Product/Fita.png" alt="" onclick="openModal(
+                               'Fita Crackers', 
+                               'Product/Fita.png', 
+                               '₱ 21.00', 
+                               'Fiber-rich crackers, light and crispy, perfect for pairing with cheese, dips, or eating plain.', 
+                               '100g'
+                           )">
                             <span class="weight"><p>20g</p></span>
                             <p> Fita </p>
                             <h4> ₱ 21.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/Nova.png" alt=""> </a>
+                            <img src="Product/Nova.png" alt="" onclick="openModal(
+                               'Nova Multi-Grain Chips', 
+                               'Product/Nova.png', 
+                               '₱ 37.00', 
+                               'A healthy alternative to regular chips, made from a blend of four different wholesome grains.', 
+                               '100g'
+                           )">
                             <span class="weight"><p>78g</p></span>
                             <p> Nova </p>
                             <h4> ₱ 37.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/Lipps.jpg" alt=""> </a>
+                            <img src="Product/Lipps.jpg" alt="" onclick="openModal(
+                               'Lipps Candy', 
+                               'Product/Lipps.jpg', 
+                               '₱ 23.00', 
+                               'Classic fruity candies known for their sweet and slightly tart flavor, popular for all ages.', 
+                               '100g'
+                           )">
                             <span class="weight"><p>250g</p></span>
                             <p> Lipps </p>
                             <h4> ₱ 23.00 </h4>
                         </div>
                         <div class="products">
-                            <a href=""> <img src="Product/Toblerone2.jpg" alt=""> </a>
+                            <img src="Product/Toblerone2.jpg" alt="" onclick="openModal(
+                               'Toblerone Chocolate', 
+                               'Product/Toblerone2.jpg', 
+                               '₱ 83.00', 
+                               'Iconic Swiss chocolate with honey and almond nougat, shaped in unique triangular peaks.', 
+                               '100g'
+                           )">
                             <span class="weight"><p>175g</p></span>
                             <p> Toblerone </p>
                             <h4> ₱ 83.00 </h4>
@@ -154,7 +221,7 @@
             <div id="user-page">
                 <section>
                     <div class="heading">
-                            <p><a href="index.html" id="home">Home / </a><a href="Account.html" id="cat">Login/Register</a></p>
+                            <p><a href="#" id="home" onclick="home()">Home / </a><a href="Account.html" id="cat">Login/Register</a></p>
                     </div>
                     <h1 id="welcome">Welcome Back!</h1>
                     <div id="reg">
@@ -188,7 +255,7 @@
             <!-- Ready to Eat Page -->
             <div id="readytoeat-page">
                 <div class="heading">
-                    <p><a href="index.html" id="home">Home / </a><a href="ReadytoEat.html" id="cat">Ready to Eat</a></p>
+                    <p><a href="#" id="home" onclick="home()">Home / </a><a href="#" id="cat" onclick="readyToEat()">Ready to Eat</a></p>
                     <h1>Ready to Eat</h1>
                 </div>
                 <section class="category">
@@ -199,7 +266,12 @@
                             <p>555 Sardines </p>
                             <h2>₱ 23.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            '555 Sardines', 
+                            'Product/555.jpg', 
+                            '₱ 23.00', 
+                            'Delicious sardines in tomato sauce, packed with flavor and essential nutrients.', 
+                            '155g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -209,7 +281,12 @@
                             <p>Ligo Sardines</p>
                             <h2>₱ 24.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Ligo Sardines', 
+                            'Product/ligo.jpg', 
+                            '₱ 24.00', 
+                            'Classic sardines in tomato sauce, a beloved Filipino pantry staple.', 
+                            '155g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -219,7 +296,12 @@
                             <p>Mega Sardines</p>
                             <h2>₱ 24.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Mega Sardines', 
+                            'Product/mega.jpg', 
+                            '₱ 24.00', 
+                            'Quality sardines known for being firm and fresh, packed in a rich tomato sauce.', 
+                            '165g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -229,7 +311,12 @@
                             <p>Delimondo Ranch Style Corned Beef</p>
                             <h2>₱ 139.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Delimondo Ranch Style Corned Beef', 
+                            'Product/DelimondoCornedBeef.jpg', 
+                            '₱ 139.00', 
+                            'Premium quality corned beef, known for its chunky, flavorful meat texture. A gourmet choice.', 
+                            '380g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -239,7 +326,12 @@
                             <p>CDO Karne Norte Corned Beef</p>
                             <h2>₱ 29.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'CDO Karne Norte Corned Beef', 
+                            'Product/KarneNorteCornedBeef.jpg', 
+                            '₱ 29.00', 
+                            'A classic budget corned beef, savory and excellent for a quick, filling meal. A pantry staple!', 
+                            '175g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -249,7 +341,12 @@
                             <p>Purefoods Corned Beef</p>
                             <h2>₱ 86.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Purefoods Corned Beef', 
+                            'Product/PurefoodsCornedBeef.jpg', 
+                            '₱ 86.00', 
+                            'A popular, high-quality corned beef brand known for its savory taste and tender shreds.', 
+                            '175g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -259,7 +356,12 @@
                             <p>Argentina Pork Luncheon Meat</p>
                             <h2>₱ 130.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Argentina Pork Luncheon Meat', 
+                            'Product/ArgentinaLuncheonMeat.jpg', 
+                            '₱ 130.00', 
+                            'Savory pork luncheon meat, perfect for a quick, versatile meal.', 
+                            '375g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -269,7 +371,12 @@
                             <p>Maling Luncheon Meat</p>
                             <h2>₱ 117.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Maling Luncheon Meat', 
+                            'Product/MaLingLuncheonMeat.jpg', 
+                            '₱ 117.00', 
+                            'High-quality luncheon meat perfect for frying, sandwiches, or adding to fried rice and pasta.', 
+                            '100g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -279,7 +386,12 @@
                             <p>Spam Pork Luncheon Meat</p>
                             <h2>₱ 210.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Spam Pork Luncheon Meat', 
+                            'Product/SpamLuncheonMeat.jpg', 
+                            '₱ 210.00', 
+                            'The original classic pork luncheon meat, great for frying and grilling.', 
+                            '340g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -290,7 +402,7 @@
             <!-- Beverages Page -->
             <div id="beverages-page">
                 <div class="heading">
-                    <p><a href="index.html" id="home">Home / </a><a href="Beverages.html" id="cat">Beverages</a></p>
+                    <p><a href="#" id="home" onclick="home()">Home / </a><a href="#" id="cat" onclick="beverages()">Beverages</a></p>
                     <h1>Beverages</h1>
                 </div>
                 <section class="category">
@@ -301,7 +413,12 @@
                             <p>Tang Orange Mango</p>
                             <h2>₱ 100.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Tang Orange Mango', 
+                            'Product/TANG.JPG', 
+                            '₱ 100.00', 
+                            'Vitamin C-packed powdered juice drink in a sweet and tangy orange mango flavor.', 
+                            '20g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -311,7 +428,12 @@
                             <p>Zesto Big 250 Orange Drink</p>
                             <h2>₱ 100.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Zesto Big 250 Orange Drink', 
+                            'Product/ZESTO ORANGE.PNG', 
+                            '₱ 100.00', 
+                            'A classic orange-flavored juice drink in a handy, ready-to-drink pack.', 
+                            '250ml')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -321,7 +443,12 @@
                             <p>Nestea Apple Iced Tea</p>
                             <h2>₱ 262.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Nestea Apple Iced Tea', 
+                            'Product/nestea apple.jpeg', 
+                            '₱ 262.00', 
+                            'A refreshing iced tea mix with the crisp, sweet flavor of real apple. Great for sharing!', 
+                            '20g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -331,7 +458,12 @@
                             <p>Great Taste Choco Coffee</p>
                             <h2>₱ 45.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Great Taste Choco Coffee', 
+                            'Product/GREAT TASTE CHOCO.PNG', 
+                            '₱ 45.00', 
+                            'A rich blend of coffee and chocolate flavor, perfect for a sweet wake-up call.', 
+                            '50g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -341,7 +473,12 @@
                             <p>Kopiko Lucky Day</p>
                             <h2>₱ 45.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Kopiko Lucky Day', 
+                            'Product/KOPIKO (LUCKY DAY).PNG', 
+                            '₱ 45.00', 
+                            'Ready-to-drink iced coffee with a bold, rich taste to give you the energy boost you need.', 
+                            '180ml')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -351,7 +488,12 @@
                             <p>Sting Strawberry Flavor</p>
                             <h2>₱ 22.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Sting Strawberry Flavor', 
+                            'Product/sting.jpeg', 
+                            '₱ 22.00', 
+                            'An energy drink with a vibrant strawberry flavor, providing a quick lift and refreshing taste.', 
+                            '320ml')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -361,7 +503,12 @@
                             <p>San Mig Pale Pilsen</p>
                             <h2>₱ 45.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'San Mig Pale Pilsen', 
+                            'Product/Sanmig.png', 
+                            '₱ 45.00', 
+                            'A classic Filipino pale pilsen, known for its crisp, refreshing flavor.', 
+                            '500g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -371,7 +518,12 @@
                             <p>Alfonso Zero</p>
                             <h2>₱ 270.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button  onclick="openModal(
+                            'Alfonso Zero', 
+                            'Product/Alfonso.jpg', 
+                            '₱ 270.00', 
+                            'A popular, light brandy perfect for mixing or drinking neat.', 
+                            '750g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -381,7 +533,12 @@
                             <p>Soju Grapefruit</p>
                             <h2>₱ 95.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Soju Grapefruit', 
+                            'Product/Soju.jpg', 
+                            '₱ 95.00', 
+                            'Korean distilled spirit with a refreshing grapefruit flavor.', 
+                            '400g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -392,7 +549,7 @@
             <!-- Snacks Page-->
             <div id="snacks-page">
                 <div class="heading">
-                    <p><a href="index.html" id="home">Home / </a><a href="Snacks.html" id="cat">Snacks</a></p>
+                    <p><a href="#" id="home" onclick="home()">Home / </a><a href="#" id="cat" onclick="snacks()">Snacks</a></p>
                     <h1>Snacks</h1>
                 </div>
                 <section class="category">
@@ -403,7 +560,12 @@
                             <p>Fita Crackers</p>
                             <h2>₱ 21.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Fita Crackers', 
+                            'Product/Fita.png', 
+                            '₱ 21.00', 
+                            'Fiber-rich crackers, light and crispy, perfect for pairing with cheese, dips, or eating plain.', 
+                            '20g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -413,7 +575,12 @@
                             <p>Hansel Chocolate Sandwich</p>
                             <h2>₱ 70.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Hansel Chocolate Sandwich', 
+                            'Product/Hansel.jpg', 
+                            '₱ 70.00', 
+                            'Sweet and savory sandwich crackers with a creamy chocolate filling.', 
+                            '25g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -423,7 +590,12 @@
                             <p>Rebisco Crackers</p>
                             <h2>₱ 67.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Rebisco Crackers', 
+                            'Product/Rebisco.jpg', 
+                            '₱ 67.00', 
+                            'Classic, salty square crackers, great for snacking or as a base for spreads.', 
+                            '30g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -433,7 +605,12 @@
                             <p>Oishi Crispy Patata</p>
                             <h2>₱ 26.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Oishi Crispy Patata', 
+                            'Product/Patata.png', 
+                            '₱ 26.00', 
+                            'Deliciously crispy potato fries snack with a savory flavor.', 
+                            '80g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -443,7 +620,12 @@
                             <p>Jack 'n Jill Piattos Roadhouse Barbeque</p>
                             <h2>₱ 37.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Jack n Jill Piattos Roadhouse Barbeque', 
+                            'Product/Piattos.png', 
+                            '₱ 37.00', 
+                            'Hexagon-shaped potato chips with a smoky and sweet roadhouse barbeque flavor.', 
+                            '85g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -453,7 +635,12 @@
                             <p>Jack 'n Jill Nova</p>
                             <h2>₱ 37.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Jack n Jill Nova', 
+                            'Product/Nova.png', 
+                            '₱ 37.00', 
+                            'A healthy alternative to regular chips, made from a blend of four different wholesome grains.', 
+                            '78g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -463,7 +650,12 @@
                             <p>Lipps Color Burst</p>
                             <h2>₱ 23.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Lipps Color Burst', 
+                            'Product/Lipps.jpg', 
+                            '₱ 23.00', 
+                            'Classic fruity candies known for their sweet and slightly tart flavor, popular for all ages.', 
+                            '250g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -473,7 +665,12 @@
                             <p>Snowbear</p>
                             <h2>₱ 65.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Snowbear', 
+                            'Product/Snowbear.jpg', 
+                            '₱ 65.00', 
+                            'Classic milk-flavored candy with a sweet, powdery texture.', 
+                            '480g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -483,7 +680,12 @@
                             <p>Toblerone</p>
                             <h2>₱ 83.00</h2>
                             <div class="addtocart">
-                                <button>Add to Cart</button>
+                                <button onclick="openModal(
+                            'Toblerone Chocolate', 
+                            'Product/Toblerone2.jpg', 
+                            '₱ 83.00', 
+                            'Iconic Swiss chocolate with honey and almond nougat, shaped in unique triangular peaks.', 
+                            '175g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -491,9 +693,33 @@
                 </section>
             </div> 
         </main>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-product-details">
+                <div class="modal-image-container">
+                    <img id="modalProductImage" src="" alt="Product Detail Image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalProductName">Product Name</h2>
+                    <h3 id="modalProductPrice">Price</h3>
+                    <p class="modal-weight-tag" id="modalProductWeight">Weight</p>
+                    <p id="modalProductDescription">Detailed description goes here...</p>
+                    
+                    <div class="modal-actions">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" value="1" min="1">
+                        <button class="modal-add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
         <footer>
             <div id="email">
-                <h1> Get awesome deals and discounts when you subscribe! </h1>
+                <h1> Subscribe to get awesome rewards and discounts! </h1>
                 <div id="footbtn">
                     <input type="text"> 
                     <button>Subscribe</button>
@@ -508,18 +734,14 @@
             </div>
             <div id="links">
                 <ul>
-                    <li><a href="">Terms and Conditions</a></li>
-                    <li><a href="">Privacy Policy</a></li>
-                    <li><a href="">Cookies Policy</a></li>
+                    <li><a href="" onclick="home()">Home</a></li>
                 </ul>
                 <ul>
-                    <li><a href="">My Account</a></li>
-                    <li><a href="">FAQs</a></li>
-                    <li><a href="">Contact Us</a></li>
+                    <li><a href="" onclick="user()">My Account</a></li>
                 </ul>
             </div>
             <div id="copyright">
-                <h1>Copyright (c), All rights reserved. </h1>
+                <h1>Copyright (c)</h1>
             </div>
         </footer>
     </body>
