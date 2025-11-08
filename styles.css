@@ -1,9 +1,24 @@
+
+/* Fonts */
+@font-face {
+    font-family: Utendo;
+    src: url(Font/Utendo.ttf);
+}
+
+@font-face {
+    font-family: Moon;
+    src: url(Font/Moon.otf);
+}
+
+
+/* Universal Properties*/
 * {
     margin: 0;
     padding: 0;
     font-family: Utendo;
 }
 
+/* Body */
 body {
     min-height: 100vh;
     display: grid;
@@ -15,7 +30,9 @@ body {
     "sidebar footer";
 }
 
-nav{
+
+/* ----- Navigation Section ----- */
+nav {
     height: 5rem;
     top: 0;
     position: sticky;
@@ -26,35 +43,6 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-}
-
-aside{
-    height: calc(100vh - 7rem);
-    top: 5rem;
-    position: sticky;
-    align-self: start;
-    grid-area: sidebar;
-    background-color: white;
-    padding: 1rem;
-}
-
-main {
-    grid-area: main;
-    background: rgb(235, 232, 232);
-    padding: 1rem;
-}
-
-footer {
-    display: grid;
-    grid-template-columns: 70% 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "email socials"
-    "links copyright";
-    grid-area: footer;
-    background: red;
-    padding: 2rem;
-    color: white;
 }
 
 #navbtn {
@@ -129,6 +117,18 @@ nav #search {
     object-fit: cover;
 }
 
+
+/* ----- Aside Section ----- */
+aside {
+    height: calc(100vh - 7rem);
+    top: 5rem;
+    position: sticky;
+    align-self: start;
+    grid-area: sidebar;
+    background-color: white;
+    padding: 1rem;
+}
+
 aside ul {
     list-style-type: none;
 }
@@ -139,16 +139,18 @@ aside li {
     padding: .5rem 1rem;
 }
 
-aside a {
+aside button {
     font-weight: bold;
-    text-decoration: none;
     color: black;
     display: flex;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 1rem;
 }
 
-aside a:hover {
-    color:red;
+aside button:hover {
+    color: red;
 }
 
 aside #sidehead {
@@ -168,7 +170,36 @@ aside img {
     padding: 0 1rem;
 }
 
-.category {
+#home-page {
+    display: block;
+}
+
+#user-page {
+    display: none;
+}
+
+#readytoeat-page {
+    display: none;
+}
+
+#snacks-page {
+    display: none;
+}
+
+#beverages-page {
+    display: none;
+}
+
+
+/* ----- Main Section ----- */
+main {
+    grid-area: main;
+    background: rgb(235, 232, 232);
+    padding: 1rem;
+}
+
+.catorange {
+    background: rgb(235, 158, 17);
     padding: 1rem;
     margin: 2rem 1rem;
     background: orangered;
@@ -176,39 +207,122 @@ aside img {
     border-radius: 10px;
 }
 
-.catorange {
-    background: rgb(235, 158, 17);
-}
-
 .catorangered {
     background: orangered;
+    padding: 1rem;
+    margin: 2rem 1rem;
+    background: orangered;
+    border: none;
+    border-radius: 10px;
 }
 
 .catyellow {
     background: rgb(221, 221, 5);
+    padding: 1rem;
+    margin: 2rem 1rem;
+    background: orangered;
+    border: none;
+    border-radius: 10px;
 }
 
-.heading {
+.message {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
 }
 
-.heading * {
+.message * {
     color: white;
     text-decoration: none;
 }
 
-.productlist {
+.product-list {
     display: grid;
     gap: 1rem 2rem;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.product {
+.products {
     display: grid;
     grid-row: span 4;
+    grid-template-rows: subgrid;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: white;
+}
+
+.products p {
+    color: red;
+    font-weight: bold;
+    font-size: clamp(1rem, 1vw, 1.5rem)
+}
+
+.products h4 {
+    font-size: clamp(1rem, 1.5vw, 2.0rem)
+}
+
+.products img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.weight {
+    align-items: center;
+    border: none;
+    width: 30%;
+}
+
+.weight p {
+    background: rgb(96, 206, 169);
+    border-radius: 6px;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    text-align: center;
+}
+
+.category {
+    padding: 1rem;
+    margin: 2rem 1rem;
+    background: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.heading {
+    padding: 1rem;
+}
+
+.heading * {
+    color: red;
+    text-decoration: none;
+}
+
+#cat {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#home {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.heading h1 {
+    padding-top: 1rem;
+}
+
+.productlist {
+    display: grid;
+    gap: 1rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.product {
+    display: grid;
+    grid-row: span 5;
     grid-template-rows: subgrid;
     border-radius: 8px;
     padding: 1rem;
@@ -268,6 +382,129 @@ aside img {
     width: 100%;
     height: auto;
     font-weight: bold;
+}
+
+#reg {
+    padding: 1rem;
+}
+
+.heading {
+    padding: 1rem;
+}
+
+.heading * {
+    color: red;
+    text-decoration: none;
+}
+
+#welcome {
+    width: stretch;
+    padding: 1rem;
+    margin: 1rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#cat {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#home {
+    color: black;
+    font-size: 1.3rem;
+}
+
+#divider {
+    display: grid;
+    gap: 1rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-areas: 
+    "login register";
+}
+
+#divider .part {
+    display: grid;
+    grid-row: span 6;
+    grid-template-rows: subgrid;
+    border-radius: 8px;
+    background-color: white;
+    padding: 3rem;
+}
+
+.part h1 {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.part input[type="text"] {
+    width: stretch;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgb(202, 197, 197);
+}
+
+.login {
+    grid-area: login;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+}
+
+.register {
+    grid-area: register;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+
+#loginbtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#loginbtn a {
+    text-decoration: none;
+    color: black;
+}
+
+#loginbtn button {
+    padding: 1rem 1.5rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 0.1rem .5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#registerbtn button {
+    padding: 1rem 1.5rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 0.1rem .5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+/* Footer Section */
+footer {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "email socials"
+    "links copyright";
+    grid-area: footer;
+    background: red;
+    padding: 2rem;
+    color: white;
 }
 
 #email {
@@ -355,6 +592,8 @@ aside img {
     text-align: right;
 }
 
+
+/* Responsive Configuration */
 @media (max-width: 800px) {
     body {
         grid-template-columns: 1fr;
@@ -408,86 +647,4 @@ aside img {
     #links a {
         font-size: 1rem;
     }
-}
-
-@font-face {
-    font-family: Utendo;
-    src: url(Font/Utendo.ttf);
-}
-
-@font-face {
-    font-family: Moon;
-    src: url(Font/Moon.otf);
-}
-
-/* Modal Styling */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto; /* 10% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 500px;
-    border-radius: 8px;
-    position: relative;
-    text-align: center;
-}
-
-/* The Close Button */
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Product Details in Modal */
-#modal-product-details img {
-    max-width: 80%;
-    height: auto;
-    margin-bottom: 15px;
-    border-radius: 4px;
-}
-
-#modal-product-details h2 {
-    margin-top: 0;
-    font-size: 1.5em;
-}
-
-#modal-product-details h3 {
-    color: #e65c00; /* Example: Orange/Red for price */
-    font-size: 1.8em;
-}
-
-#add-to-cart-btn {
-    background-color: #e65c00;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
 }
