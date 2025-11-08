@@ -76,12 +76,11 @@ nav {
 }
 
 #navlog button {
-    padding: .5rem 1rem;
-    background: white;
+    padding: .5rem;
+    background: rgba(0, 0, 0, 0);
     color: red;
     border: none;
     border-radius: 6px;
-    margin: 0.1rem .5rem;
 }
 
 #navlog img {
@@ -628,6 +627,15 @@ footer {
     nav #search {
         display: none;
     }
+
+    .modal-product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .modal-image-container {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 940px) {
@@ -647,4 +655,122 @@ footer {
     #links a {
         font-size: 1rem;
     }
+}
+
+/* --- Modal Styling --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%; 
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-product-details {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.modal-image-container {
+    flex: 0 0 40%;
+    max-width: 300px;
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.modal-info {
+    flex: 1;
+}
+
+.modal-info h2 {
+    font-size: 2em;
+    margin-top: 0;
+    color: red;
+}
+
+.modal-info h3 {
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.modal-weight-tag {
+    display: inline-block;
+    background: rgb(96, 206, 169);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.modal-add-to-cart {
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#quantity {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
