@@ -188,6 +188,13 @@ aside img {
     display: none;
 }
 
+#about-us-page {
+    display: none;
+}
+
+#cart-page {
+    display: none;
+}
 
 /* ----- Main Section ----- */
 main {
@@ -200,7 +207,6 @@ main {
     background: rgb(235, 158, 17);
     padding: 1rem;
     margin: 2rem 1rem;
-    background: orangered;
     border: none;
     border-radius: 10px;
 }
@@ -209,7 +215,6 @@ main {
     background: orangered;
     padding: 1rem;
     margin: 2rem 1rem;
-    background: orangered;
     border: none;
     border-radius: 10px;
 }
@@ -218,7 +223,6 @@ main {
     background: rgb(221, 221, 5);
     padding: 1rem;
     margin: 2rem 1rem;
-    background: orangered;
     border: none;
     border-radius: 10px;
 }
@@ -493,6 +497,8 @@ main {
     font-weight: bold;
     font-size: 1rem;
 }
+
+
 
 
 /* Footer Section */
