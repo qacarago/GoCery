@@ -403,7 +403,7 @@ main {
     text-decoration: none;
 }
 
-#welcome {
+.welcome {
     width: stretch;
     padding: 1rem;
     margin: 1rem;
@@ -498,8 +498,47 @@ main {
     font-size: 1rem;
 }
 
+#employee-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem 2rem;
+    padding: 1rem;
+}
 
+.employee {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: white;
+    align-items: center;
+    justify-items: center;
+}
 
+.employee img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+
+}
+
+.employee h3 {
+    color: red;
+}
+
+.soc-med {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.soc-med img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    margin: 0 0.5rem;
+}
 
 /* Footer Section */
 footer {
