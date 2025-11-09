@@ -20,8 +20,8 @@
             </div>
             <input id="search" type="text" placeholder="Search product here...">
             <div id="navlog">
-                <button onclick="user()"><img src="Category/userlogo.png" alt="user icon"></button>
-                <button onclick="cart()"><img src="Category/shopping-cart.png"></button>
+                <button onclick="showPage(user_page)"><img src="Category/userlogo.png" alt="user icon"></button>
+                <button onclick="showPage(cart_page)"><img src="Category/shopping-cart.png"></button>
             </div>
         </nav>
         <aside id="sidebar">
@@ -30,19 +30,22 @@
             <p>Search by Category</p>
             <ul>
                 <li>
-                    <button onclick="home()"><img src="Category/redhome.png" alt="home icon">Home</button>
+                    <button onclick="showPage(home_page)"><img src="Category/redhome.png" alt="home icon">Home</button>
                 </li>
                 <li>
-                    <button onclick="user()"><img src="Category/reduser.png" alt="user icon">Login / Register </button>
+                    <button onclick="showPage(user_page)"><img src="Category/reduser.png" alt="user icon">Login / Register </button>
                 </li>
                 <li>
-                    <button onclick="readyToEat()"><img src="Category/redcanned-food.png" alt="canned goods icon">Ready to Eat</button>
+                    <button onclick="showPage(ready_to_eat_page)"><img src="Category/redcanned-food.png" alt="canned goods icon">Ready to Eat</button>
                 </li>
                 <li>
-                    <button onclick="beverages()"><img src="Category/redsoda.png" alt="beverages icon">Beverages</button>
+                    <button onclick="showPage(beverages_page)"><img src="Category/redsoda.png" alt="beverages icon">Beverages</button>
                 </li>
                 <li>
-                    <button onclick="snacks()"><img src="Category/redsnack.png" alt="snacks icon">Snacks</button>
+                    <button onclick="showPage(snacks_page)"><img src="Category/redsnack.png" alt="snacks icon">Snacks</button>
+                </li>
+                <li>
+                    <button onclick="showPage(about_us_page)"><img src="Category/redcoding.png" alt="developers icon">About Us</button>
                 </li>
             </ul>
         </aside>
@@ -51,13 +54,13 @@
             <!-- Home Page -->
             <div id="home-page">
                 <div class="heading">
-                    <p><a href="#" id="home" onclick="home()">Home /</p>
+                    <p><a href="#" id="home" onclick="showPage(home_page)">Home /</p>
                     <h1>Home</h1>
                 </div>
                 <section class="catorangered">
                     <div class="message">
                         <h1>Ready to Eat</h1>
-                        <a href="#" onclick="readyToEat()"><h1>See more.</h1></a>
+                        <a href="#" onclick="showPage(ready_to_eat_page)"><h1>See more.</h1></a>
                     </div>
                     <div class="product-list">
                         <div class="products">
@@ -107,7 +110,7 @@
                 <section class="catorange">
                     <div class="message">
                         <h1>Beverages</h1>
-                        <a href="#" onclick="beverages()"><h1>See more.</h1></a>
+                        <a href="#" onclick="showPage(beverages_page)"><h1>See more.</h1></a>
                     </div>
                     <div class="product-list">
                         <div class="products">
@@ -163,7 +166,7 @@
                 <section class="catyellow">
                     <div class="message">
                         <h1>Snacks</h1>
-                        <a href="#" onclick="snacks()"><h1>See more.</h1></a>
+                        <a href="#" onclick="showPage(snacks_page)"><h1>See more.</h1></a>
                     </div>
                     <div class="product-list">
                         <div class="products">
@@ -222,7 +225,7 @@
             <div id="user-page">
                 <section>
                     <div class="heading">
-                            <p><a href="#" id="home" onclick="home()">Home / </a><a href="#" id="cat" onclick="user()">Login/Register</a></p>
+                            <p><a href="#" id="home" onclick="showPage(home_page)">Home / </a><a href="#" id="cat" onclick="showPage(user_page)">Login/Register</a></p>
                     </div>
                     <h1 id="welcome">Welcome Back!</h1>
                     <div id="reg">
@@ -256,7 +259,7 @@
             <!-- Ready to Eat Page -->
             <div id="readytoeat-page">
                 <div class="heading">
-                    <p><a href="#" id="home" onclick="home()">Home / </a><a href="#" id="cat" onclick="readyToEat()">Ready to Eat</a></p>
+                    <p><a href="#" id="home" onclick="showPage(user_page)">Home / </a><a href="#" id="cat" onclick="showPage(ready_to_eat_page)">Ready to Eat</a></p>
                     <h1>Ready to Eat</h1>
                 </div>
                 <section class="category">
@@ -403,7 +406,7 @@
             <!-- Beverages Page -->
             <div id="beverages-page">
                 <div class="heading">
-                    <p><a href="#" id="home" onclick="home()">Home / </a><a href="#" id="cat" onclick="beverages()">Beverages</a></p>
+                    <p><a href="#" id="home" onclick="showPage(home_page)">Home / </a><a href="#" id="cat" onclick="showPage(beverages_page)">Beverages</a></p>
                     <h1>Beverages</h1>
                 </div>
                 <section class="category">
@@ -550,7 +553,7 @@
             <!-- Snacks Page-->
             <div id="snacks-page">
                 <div class="heading">
-                    <p><a href="#" id="home" onclick="home()">Home / </a><a href="#" id="cat" onclick="snacks()">Snacks</a></p>
+                    <p><a href="#" id="home" onclick="showPage(home_page)">Home / </a><a href="#" id="cat" onclick="showPage(snacks_page)">Snacks</a></p>
                     <h1>Snacks</h1>
                 </div>
                 <section class="category">
@@ -692,7 +695,27 @@
                         </div>
                     </div>
                 </section>
-            </div> 
+            </div>
+            
+            <!-- Our Team Page -->
+             <div id="about-us-page">
+                <section>
+                    <div class="heading">
+                        <p><a href="#" id="home" onclick="showPage(home_page)">Home / </a><a href="#" id="cat" onclick="showPage(about_us_page)">Our Team</a></p>
+                        <h1>Our Team</h1>
+                    </div>
+                </section>
+             </div>
+
+             <!-- Cart Page -->
+             <div id="cart-page">
+                <section>
+                    <div class="heading">
+                        <p><a href="#" id="home" onclick="showPage(home_page)">Home / </a><a href="#" id="cat" onclick="showPage(cart_page)">Cart</a></p>
+                        <h1>Cart</h1>
+                    </div>
+                </section>
+             </div>
         </main>
 
     <div id="productModal" class="modal">
@@ -735,10 +758,12 @@
             </div>
             <div id="links">
                 <ul>
-                    <li><a href="" onclick="home()">Home</a></li>
+                    <li><a href="#" onclick="showPage(home_page)">Home</a></li>
+                    <li><a href="#" onclick="showPage(cart_page)">Your Cart</a></li>
                 </ul>
                 <ul>
-                    <li><a href="" onclick="user()">My Account</a></li>
+                    <li><a href="#" onclick="showPage(user_page)">My Account</a></li>
+                    <li><a href="#" onclick="showPage(about_us_page)">About Us</a></li>
                 </ul>
             </div>
             <div id="copyright">
