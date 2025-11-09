@@ -1,5 +1,5 @@
 
-// Sidebar Button
+// Sidebar Nav
 const sidebar = document.getElementById('sidebar')
 
 function toggleSidebar(){
@@ -7,7 +7,7 @@ function toggleSidebar(){
 }
 
 
-// Sidebar Links
+// Sidebar links
 let home_page = document.querySelector('#home-page');
 let snacks_page = document.querySelector('#snacks-page');
 let beverages_page = document.querySelector('#beverages-page');
@@ -26,17 +26,53 @@ const pageElements = [
     cart_page
 ];
 
+// Shows and hides pages
 function showPage(pageToShow) {
-    // 1. Hide all pages
     pageElements.forEach(page => {
         page.style.display = 'none';
     });
 
-    // 2. Show the specific page passed to the function
     pageToShow.style.display = 'block';
 }
 
-// Modal Pop Ups
+// Sign in
+const username = document.querySelector('#username');
+const password = document.querySelector('#password');
+const sign_in_btn = document.querySelector('#sign-in-btn');
+const welcome = document.querySelector('.welcome');
+
+sign_in_btn.addEventListener('click', () => {
+    const inputValue = username.value;
+    welcome.textContent = `Hello, @${inputValue}. Welcome Back!`;
+    alert(`@${inputValue} Sucessfully Signed In!`);
+});
+
+// Register an account
+const registers = document.querySelector('#register-container');
+
+function register() {
+    registers.style.display = 'flex';
+}
+
+const register_username = document.querySelector('#register-username');
+const register_email = document.querySelector('#register-email');
+const register_password = document.querySelector('#register-password');
+
+function registerSubmit() {
+    const welcome = document.querySelector('.welcome');
+    const inputValue = register_username.value;
+    welcome.textContent = `Hello, @${inputValue}. Welcome Back!`;
+    alert(`@${inputValue} Account Sucessfully Created`);
+
+    registers.style.display = 'none';
+}
+
+function registerCancel() {
+    registers.style.display = 'none';    
+}
+
+
+// Modal pop ups
 const modal = document.getElementById("productModal");
 
 function openModal(name, imageSrc, price, description, weight) {
