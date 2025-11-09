@@ -9,14 +9,16 @@
         <nav>
             <div id="navlogo">
                 <button id="navbtn" onclick="toggleSidebar()"><img src="Category/navigation-bar.png" alt="navigation icon"></button>
-                <img src="Category/Logo.png" alt="GoCery Logo">
+                <img src="Category/Logo.png" alt="GoCery Logo" onclick="showPage(home_page)">
             </div>
             <div id="loc">
-                <img src="Category/location.png">
-                <div>
-                    <h3>GoCery Cubao Branch</h3>
-                    <p>Metro Manila, Quezon City</p>
-                </div>
+                <a href="https://www.google.com/maps/place/Anonas,+Quezon+City,+Metro+Manila/@14.631201,121.0583471,731m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3397b799eb69052f:0xecf056a7b63d2a9e!8m2!3d14.6311958!4d121.060922!16s%2Fm%2F012bnz70?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img src="Category/location.png">
+                    <div>
+                        <h3>GoCery Cubao Branch</h3>
+                        <p>Metro Manila, Quezon City</p>
+                    </div>
+                </a>
             </div>
             <input id="search" type="text" placeholder="Search product here...">
             <div id="navlog">
@@ -232,13 +234,12 @@
                         <div id="divider">
                             <div class="part login">
                                 <h1>Registered Customer</h1>
-                                <label>* Email Address: </label>
-                                <input type="text" required>
+                                <label>* Username: </label>
+                                <input id="username" type="text" required>
                                 <label>* Password: </label>
-                                <input type="text" required>
+                                <input id="password" type="text" required>
                                 <div id="loginbtn">
-                                    <button>Sign In</button>
-                                    <a href="">Forget Password?</a>
+                                    <button id="sign-in-btn">Sign In</button>
                                 </div>
                             </div>
                             <div class="part register">
@@ -248,18 +249,34 @@
                                 <p> Schedule flexibly </p>
                                 <p> Redeem Discounts </p>
                                 <div id="registerbtn">
-                                    <button>Create an Account</button>
+                                    <button id="register-btn" onclick="register()">Create an Account</button>
                                 </div>
                             </div>
                         </div>
                     </div> 
                 </section>
+
+                <div id="register-container">
+                    <div id="register-content">
+                        <h1>Register</h1>
+                        <label>* Username:</label>
+                        <input id="register-username" type="text" required></input>
+                        <label>* Email:</label>
+                        <input id="register-email" type="text" required></input>
+                        <label>* Password:</label>
+                        <input id="register-password" type="text" required></input>
+                        <div id="register-btns">
+                            <button id="register-submit" onclick="registerSubmit()">Create</button>
+                            <button id="register-cancel" onclick="registerCancel()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Ready to Eat Page -->
             <div id="readytoeat-page">
                 <div class="heading">
-                    <p><a href="#" id="home" onclick="showPage(user_page)">Home / </a><a href="#" id="cat" onclick="showPage(ready_to_eat_page)">Ready to Eat</a></p>
+                    <p><a href="#" id="home" onclick="showPage(home_page)">Home / </a><a href="#" id="cat" onclick="showPage(ready_to_eat_page)">Ready to Eat</a></p>
                     <h1>Ready to Eat</h1>
                 </div>
                 <section class="category">
@@ -271,11 +288,11 @@
                             <h2>₱ 23.00</h2>
                             <div class="addtocart">
                                 <button onclick="openModal(
-                            '555 Sardines', 
-                            'Product/555.jpg', 
-                            '₱ 23.00', 
-                            'Delicious sardines in tomato sauce, packed with flavor and essential nutrients.', 
-                            '155g')">Add to Cart</button>
+                            '555 Sardines', 
+                            'Product/555.jpg', 
+                            '₱ 23.00', 
+                            'Delicious sardines in tomato sauce, packed with flavor and essential nutrients.', 
+                            '155g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -286,11 +303,11 @@
                             <h2>₱ 24.00</h2>
                             <div class="addtocart">
                                 <button onclick="openModal(
-                            'Ligo Sardines', 
-                            'Product/ligo.jpg', 
-                            '₱ 24.00', 
-                            'Classic sardines in tomato sauce, a beloved Filipino pantry staple.', 
-                            '155g')">Add to Cart</button>
+                            'Ligo Sardines', 
+                            'Product/ligo.jpg', 
+                            '₱ 24.00', 
+                            'Classic sardines in tomato sauce, a beloved Filipino pantry staple.', 
+                            '155g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -301,11 +318,11 @@
                             <h2>₱ 24.00</h2>
                             <div class="addtocart">
                                 <button onclick="openModal(
-                            'Mega Sardines', 
-                            'Product/mega.jpg', 
-                            '₱ 24.00', 
-                            'Quality sardines known for being firm and fresh, packed in a rich tomato sauce.', 
-                            '165g')">Add to Cart</button>
+                            'Mega Sardines', 
+                            'Product/mega.jpg', 
+                            '₱ 24.00', 
+                            'Quality sardines known for being firm and fresh, packed in a rich tomato sauce.', 
+                            '165g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
@@ -316,11 +333,11 @@
                             <h2>₱ 139.00</h2>
                             <div class="addtocart">
                                 <button onclick="openModal(
-                            'Delimondo Ranch Style Corned Beef', 
-                            'Product/DelimondoCornedBeef.jpg', 
-                            '₱ 139.00', 
-                            'Premium quality corned beef, known for its chunky, flavorful meat texture. A gourmet choice.', 
-                            '380g')">Add to Cart</button>
+                            'Delimondo Ranch Style Corned Beef', 
+                            'Product/DelimondoCornedBeef.jpg', 
+                            '₱ 139.00', 
+                            'Premium quality corned beef, known for its chunky, flavorful meat texture. A gourmet choice.', 
+                            '380g')">Add to Cart</button>
                                 <a href=""> <img src="Category/heart.png"></a>
                             </div>
                         </div>
