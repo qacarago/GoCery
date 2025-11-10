@@ -38,19 +38,6 @@ function showPage(pageToShow) {
 }
 
 
-// Sign in
-const username = document.querySelector('#username');
-const password = document.querySelector('#password');
-const sign_in_btn = document.querySelector('#sign-in-btn');
-const welcome = document.querySelector('.welcome');
-
-sign_in_btn.addEventListener('click', () => {
-    const inputValue = username.value;
-    welcome.textContent = `Hello, @${inputValue}. Welcome Back!`;
-    alert(`@${inputValue} Sucessfully Signed In!`);
-});
-
-
 // Register an account
 const registers = document.querySelector('#register-container');
 
@@ -61,12 +48,17 @@ function register() {
 const register_username = document.querySelector('#register-username');
 const register_email = document.querySelector('#register-email');
 const register_password = document.querySelector('#register-password');
+window.register_user = register_username.value;
+window.register_pass = register_password.value;
 
 function registerSubmit() {
-    const welcome = document.querySelector('.welcome');
-    const inputValue = register_username.value;
-    welcome.textContent = `Hello, @${inputValue}. Welcome Back!`;
-    alert(`@${inputValue} Account Sucessfully Created`);
+    window.register_user = register_username.value;
+    window.register_pass = register_password.value;
+    if (window.register_user != '' && window.register_pass != '') {
+        alert(`Account @${register_user} is sucessfully created. Please log in!`);
+    } else {
+        alert('Please enter a valid username and password! Try again!')
+    }
 
     registers.style.display = 'none';
 }
@@ -76,9 +68,35 @@ function registerCancel() {
 }
 
 
+// Sign in
+const username = document.querySelector('#username');
+const password = document.querySelector('#password');
+const sign_in_btn = document.querySelector('#sign-in-btn');
+const welcome = document.querySelector('.welcome');
+window.usernameValue = username.value;
+window.passwordValue = password.value;
+
+sign_in_btn.addEventListener('click', () => {
+    window.usernameValue = username.value;
+    window.passwordValue = password.value;
+    if (window.usernameValue == window.register_user && window.passwordValue == window.register_pass && window.usernameValue && window.passwordValue) {
+        welcome.textContent = `Hello, @${window.usernameValue}. Welcome Back!`;
+        alert(`@${window.usernameValue} Sucessfully Signed In!`);
+    } else {
+        alert('Account is not yet created! Please register an account!');
+    }
+});
+
+
 // Subscribe
 function subscribe (){
-    alert('You have successfully subscribed!')
+    const email_input = document.querySelector('#email-input').value;
+
+    if (email_input != '' && email_input.endsWith('@gmail.com')) {
+        alert('You have successfully subscribed!');
+    } else {
+        alert('Please enter your email address!');
+    }
 }
 
 
@@ -176,7 +194,7 @@ function updateCartDisplay() {
 
     // If the cart is empty
     if (cart.length === 0) {
-        cartContent.innerHTML = '<p class="empty-cart-message">Your cart is empty.</p>';
+        cartContent.innerHTML = '<p class="empty-cart-message">Empty cart</p>';
         return;
     }
 
@@ -213,7 +231,7 @@ function updateCartDisplay() {
 
     // 2. Build the final summary
     cartContent.innerHTML = `
-        <ul class="cart-items-list">${cartListHTML}</ul>
+        <ul class="cart-items-list" style="color">${cartListHTML}</ul>
         <div class="cart-summary">
             <h3>Order Summary</h3>
             <p>Subtotal: ₱ ${subtotal.toFixed(2)}</p>
