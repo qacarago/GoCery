@@ -967,7 +967,7 @@ footer {
 }
 
 .cart-item-controls input {
-    width: 60px;
+    width: 3rem;
     padding: 8px;
     text-align: center;
     border: 1px solid #ccc;
@@ -1131,5 +1131,6 @@ footer {
         display: none;
     }
 }
+
 
 
