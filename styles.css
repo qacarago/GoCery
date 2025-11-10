@@ -940,8 +940,8 @@ footer {
 }
 
 .cart-item-img {
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 8rem;
     object-fit: contain;
     margin-right: 20px;
     padding: 5px;
