@@ -937,7 +937,6 @@ footer {
     display: flex;
     align-items: center;
     padding: 1rem;
-    margin: 1rem 0;
 }
 
 .cart-item-img {
@@ -1090,8 +1089,14 @@ footer {
         font-weight: normal;
     }
     
-}
+    .cart-item-price {
+        font-size: 0.7rem;
+    }
 
+    .cart-item-total {
+        font-size: 0.9rem;
+    }
+}
 
 
 @media (max-width: 940px) {
