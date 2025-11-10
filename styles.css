@@ -1141,8 +1141,9 @@ footer {
     }
 
     .cart-item-controls button {
+        margin-top: 0.2rem;
         padding: 6px 10px;
-        margin-left: 0.2rem;
+        margin-left: 0;
         font-weight: normal;
     }
 
@@ -1150,4 +1151,9 @@ footer {
         width: 4rem;
         height: 4rem;
     }
+
+    .cart-item-total {
+        width: 5rem; 
+    }
+    
 }
