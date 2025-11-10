@@ -235,7 +235,7 @@ function updateCartDisplay() {
         <div class="cart-summary">
             <h3>Order Summary</h3>
             <p>Subtotal: ₱ ${subtotal.toFixed(2)}</p>
-            <button class="checkout-button">Proceed to Checkout</button>
+            <button class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
         </div>
     `;
 }
@@ -266,3 +266,15 @@ function removeItem(productName) {
 
 // Initial call to ensure the cart page shows "empty" on load
 document.addEventListener('DOMContentLoaded', updateCartDisplay);
+
+
+// Streak System
+window.streak_counter = document.querySelector('#streak-no');
+window.counter = 0;
+
+function checkout() {
+    const  streak = document.querySelector('#streak');
+    streak.style.display = 'flex';
+    window.counter++
+    window.streak_counter.textContent = window.counter;
+}
