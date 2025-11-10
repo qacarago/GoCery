@@ -686,6 +686,163 @@ main {
 #streak-counter {
     text-align: center;
 }
+
+#payment-container {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    overflow: auto;
+}
+
+#payment-content {
+    display: block;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 3rem;
+    border-radius: 10px;
+    width: 50%; 
+    max-width: 800px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+#payment-content input[type="text"] {
+    width: stretch;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgb(202, 197, 197);
+    margin-bottom: 1rem;
+}
+
+#payment-content input[type="number"] {
+    width: stretch;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgb(202, 197, 197);
+    margin-bottom: 1rem;
+}
+
+#payment-content input[type="time"] {
+    width: stretch;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgb(202, 197, 197);
+    margin-bottom: 1rem;
+}
+
+#payment-content input[type="date"] {
+    width: stretch;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgb(202, 197, 197);
+    margin-bottom: 1rem;
+}
+
+#payment-content h1 {
+    font-size: 2rem;
+    color: red;
+    text-align: center;
+}
+
+#payment-content button {
+    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#payment-content button:hover {
+    background-color: #D73728;
+}
+
+#payment-content h3 {
+    color: red;
+}
+
+#payment-content #payment-cancel {
+    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+    background: rgba(0, 0, 0, 0);
+    color: red;
+    border: solid red 1px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#payment-content #payment-cancel:hover {
+    background-color: #D73728;
+    color: white;
+}
+
+#payment-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#card-details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#expiry-date {
+    width: 49%;
+}
+
+#date-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dates {
+    width: 49%
+}
+
+#times {
+    width: 49%;
+}
+
+#cvv {
+    width: 49%;
+}
+
+#contact-no {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#telephone {
+    width: 49%;
+}
+
+#phone {
+    width: 49%;
+}
+
+
 /* Footer Section */
 footer {
     display: grid;
