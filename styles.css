@@ -650,7 +650,7 @@ main {
 }
 
 #streak {
-    z-index: 999;
+    z-index: 100;
     float: right;
     position: fixed;
     bottom: 2rem;
@@ -1078,11 +1078,21 @@ footer {
     #register-content {
         width: 50%;
     }
-    
+
     .cart-item-controls input {
         width: 2rem;
+        padding: 6px;
     }
+
+    .cart-item-controls button {
+        padding: 6px 10px;
+        margin-left: 0.2rem;
+        font-weight: normal;
+    }
+    
 }
+
+
 
 @media (max-width: 940px) {
     footer {
@@ -1131,6 +1141,3 @@ footer {
         display: none;
     }
 }
-
-
-
