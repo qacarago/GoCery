@@ -1096,6 +1096,11 @@ footer {
     .cart-item-total {
         font-size: 0.9rem;
     }
+
+    .cart-item-img {
+        width: 5rem;
+        height: 5rem;
+    }
 }
 
 
