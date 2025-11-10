@@ -1,5 +1,3 @@
-
-
 // Sidebar Nav
 const sidebar = document.getElementById('sidebar')
 
@@ -99,43 +97,37 @@ function subscribe (){
     }
 }
 
-
-// 🛒 The main array to hold all products in the shopping cart
+// Cart
 let cart = [];
 
-// Store the details of the product currently being viewed in the modal
 let productInModal = {};
 
-// --- Element References (for easier access) ---
 const productModal = document.getElementById('productModal');
 const modalQuantityInput = document.getElementById('quantity');
 const modalAddToCartButton = productModal.querySelector('.modal-add-to-cart');
 const cartContentWrapper = document.getElementById('cart-page').querySelector('section');
 
-// --- Modal Functions ---
+// Modal Functions
 
 function openModal(name, image, price, description, weight) {
-    // 1. Convert price string "₱ 21.00" to a number (21.00)
     const numericPrice = parseFloat(price.replace('₱ ', '').replace(',', ''));
     
-    // 2. Store the product details globally for when the final "Add to Cart" is clicked
     productInModal = {
         name: name,
         image: image,
         price: numericPrice,
         weight: weight,
-        description: description // Keep description just in case
+        description: description
     };
 
-    // 3. Populate the modal with the details
+
     document.getElementById('modalProductName').textContent = name;
     document.getElementById('modalProductPrice').textContent = price;
     document.getElementById('modalProductWeight').textContent = weight;
     document.getElementById('modalProductDescription').textContent = description;
     document.getElementById('modalProductImage').src = image;
-    modalQuantityInput.value = 1; // Always start quantity at 1
+    modalQuantityInput.value = 1;
     
-    // 4. Show the modal
     productModal.style.display = 'block';
 }
 
@@ -143,14 +135,13 @@ function closeModal() {
     productModal.style.display = 'none';
 }
 
-// Close the modal when clicking outside (standard functionality)
 window.onclick = function(event) {
     if (event.target == productModal) {
         closeModal();
     }
 }
 
-// --- Core Cart Logic ---
+// Cart Logic
 
 modalAddToCartButton.addEventListener('click', () => {
     const quantity = parseInt(modalQuantityInput.value);
@@ -160,39 +151,80 @@ modalAddToCartButton.addEventListener('click', () => {
         return;
     }
 
-    // 1. Check if the product is ALREADY in the cart
     const existingItem = cart.find(item => item.name === productInModal.name);
 
     if (existingItem) {
-        // If found, just increase the quantity
         existingItem.quantity += quantity;
     } else {
-        // If not found, add a NEW item object to the cart array
         cart.push({
-            ...productInModal, // Copy all details from productInModal
-            quantity: quantity  // Add the quantity property
+            ...productInModal, 
+            quantity: quantity
         });
     }
 
     alert(`${quantity} x ${productInModal.name} added to cart!`);
     closeModal();
-    updateCartDisplay(); // Always update the cart page after a change
+    updateCartDisplay();
 });
 
-// --- Cart Page Rendering and Calculation ---
+function changeQuantity(productName, newQuantity) {
+    const quantity = parseInt(newQuantity);
+    const item = cart.find(item => item.name === productName);
+    
+    if (item) {
+        if (quantity > 0) {
+            item.quantity = quantity;
+        } else {
+            removeItem(productName);
+            return;
+        }
+    }
+    updateCartDisplay();
+}
+
+
+function removeItem(productName) {
+    cart = cart.filter(item => item.name !== productName);
+    updateCartDisplay();
+}
+
+document.addEventListener('DOMContentLoaded', updateCartDisplay);
+
+
+// Streak System
+window.streak_counter = document.querySelector('#streak-no');
+window.counter = 0; 
+
+function calculateDiscountPercentage(streak) {
+    if (streak >= 12) {
+        return 0.07; // 7% off
+    } else if (streak >= 10) {
+        return 0.06; // 6% off
+    } else if (streak >= 8) {
+        return 0.05; // 5% off
+    } else if (streak >= 6) {
+        return 0.04; // 4% off
+    } else if (streak >= 4) {
+        return 0.03; // 3% off
+    } else if (streak >= 2) {
+        return 0.02; // 2% off
+    } else {
+        return 0.00; // 0% off
+    }
+}
+
+
+// Cart Page Rendering and Calculation
 
 function updateCartDisplay() {
-    // Clear any previous cart list (except for the heading structure)
     let cartContent = cartContentWrapper.querySelector('.dynamic-cart-content');
     if (!cartContent) {
-        // Create the container if it doesn't exist
         cartContent = document.createElement('div');
         cartContent.className = 'dynamic-cart-content';
         cartContentWrapper.appendChild(cartContent);
     }
-    cartContent.innerHTML = ''; 
+    cartContent.innerHTML = '';
 
-    // If the cart is empty
     if (cart.length === 0) {
         cartContent.innerHTML = '<p class="empty-cart-message">Empty cart</p>';
         return;
@@ -200,12 +232,10 @@ function updateCartDisplay() {
 
     let subtotal = 0;
     
-    // 1. Build the list of items
     const cartListHTML = cart.map(item => {
         const itemTotal = item.price * item.quantity;
-        subtotal += itemTotal; // Add to subtotal
+        subtotal += itemTotal;
 
-        // Use a unique name for a stable 'id' for quantity/remove controls
         const itemIdentifier = item.name.replace(/[^a-zA-Z0-9]/g, '');
 
         return `
@@ -216,65 +246,79 @@ function updateCartDisplay() {
                     <p class="cart-item-price">₱ ${item.price.toFixed(2)}</p>
                     
                     <div class="cart-item-controls">
-                        <input type="number" 
-                               value="${item.quantity}" 
-                               min="1" 
-                               id="qty-${itemIdentifier}"
-                               onchange="changeQuantity('${item.name}', this.value)">
+                        <input type="number"
+                                value="${item.quantity}"
+                                min="1"
+                                id="qty-${itemIdentifier}"
+                                onchange="changeQuantity('${item.name}', this.value)">
                         <button onclick="removeItem('${item.name}')">Remove</button>
                     </div>
                 </div>
                 <p class="cart-item-total">Total: ₱ ${itemTotal.toFixed(2)}</p>
             </li>
         `;
-    }).join(''); // Join the array of HTML strings into one big string
+    }).join('');
 
-    // 2. Build the final summary
+
+    const discountPercentage = calculateDiscountPercentage(window.counter);
+    const discountAmount = subtotal * discountPercentage;
+    const finalTotal = subtotal - discountAmount;
+    
+
+    const discountPercentageDisplay = (discountPercentage * 100).toFixed(0);
+
+    let discountHTML = '';
+    if (discountAmount > 0) {
+        discountHTML = `
+            <p class="discount-label">Streak Discount (${discountPercentageDisplay}% off): <span class="discount-amount">- ₱ ${discountAmount.toFixed(2)}</span></p>
+        `;
+    }
+
+
     cartContent.innerHTML = `
         <ul class="cart-items-list" style="color">${cartListHTML}</ul>
         <div class="cart-summary">
             <h3>Order Summary</h3>
             <p>Subtotal: ₱ ${subtotal.toFixed(2)}</p>
+            ${discountHTML}
+            <p class="final-total">Grand Total: ₱ ${finalTotal.toFixed(2)}</p>
             <button class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
         </div>
     `;
 }
 
-// Function to handle quantity change directly in the cart list
-function changeQuantity(productName, newQuantity) {
-    const quantity = parseInt(newQuantity);
-    const item = cart.find(item => item.name === productName);
-    
-    if (item) {
-        if (quantity > 0) {
-            item.quantity = quantity;
-        } else {
-            // If quantity goes to 0 or less, remove the item
-            removeItem(productName);
-            return; // Exit early since removeItem will call updateCartDisplay
-        }
-    }
-    updateCartDisplay();
-}
-
-// Function to remove an item by its name
-function removeItem(productName) {
-    // Filter the cart to keep only items whose names DO NOT match the one we want to remove
-    cart = cart.filter(item => item.name !== productName);
-    updateCartDisplay();
-}
-
-// Initial call to ensure the cart page shows "empty" on load
-document.addEventListener('DOMContentLoaded', updateCartDisplay);
-
-
-// Streak System
-window.streak_counter = document.querySelector('#streak-no');
-window.counter = 0;
 
 function checkout() {
-    const  streak = document.querySelector('#streak');
+    if (window.usernameValue) {
+        const order_container = document.querySelector('#payment-container');
+        order_container.style.display = 'flex';
+    } else {
+        alert('Sign in or register first!');
+    }
+}
+
+function placeOrder() {
+    const order_container = document.querySelector('#payment-container');
+    order_container.style.display = 'none';
+    const  streak = document.querySelector('#streak');
+    
+    if (cart.length === 0) {
+        alert("The cart is empty. Cannot place order.");
+        return;
+    }
+
+    alert(`Payment Sucessful`);
+
+
+    cart = [];
+    updateCartDisplay();
+
     streak.style.display = 'flex';
-    window.counter++
+    window.counter++;
     window.streak_counter.textContent = window.counter;
+}
+
+function paymentCancel() {
+    const order_container = document.querySelector('#payment-container');
+    order_container.style.display = 'none';
 }
