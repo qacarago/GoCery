@@ -1078,6 +1078,10 @@ footer {
     #register-content {
         width: 50%;
     }
+    
+    .cart-item-controls input {
+        width: 2rem;
+    }
 }
 
 @media (max-width: 940px) {
@@ -1127,4 +1131,5 @@ footer {
         display: none;
     }
 }
+
 
