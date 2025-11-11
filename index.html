@@ -59,6 +59,9 @@
                     <p><a href="#" id="home" onclick="showPage(home_page)">Home /</p>
                     <h1>Home</h1>
                 </div>
+                <section id="ad">
+                    <img id="adImage" src="Category/AD1.png" alt="Advertisement">
+                </section>
                 <section class="catorangered">
                     <div class="message">
                         <h1>Ready to Eat</h1>
@@ -265,6 +268,11 @@
                         <input id="register-email" type="text" required></input>
                         <label>* Password:</label>
                         <input id="register-password" type="text" required></input>
+                        <label>For PWD/Senior: </label>
+                        <label for="file-upload" class="custom-file-upload">
+                                Upload ID
+                        </label>
+                        <input id="file-upload" type="file" />
                         <div id="register-btns">
                             <button id="register-cancel" onclick="registerCancel()">Cancel</button>
                             <button id="register-submit" onclick="registerSubmit()">Create</button>
@@ -817,11 +825,11 @@
                     <div id="contact-no">
                         <div id="phone">
                         <label>Phone No.:</label>
-                        <input type="number" required></input>
+                        <input type="tel" required>
                         </div>
                         <div id="telephone">
                         <label>Telephone No.:</label>
-                        <input type="number" required></input>
+                        <input type="tel" required>
                         </div>
                     </div>
                     <div id="register-btns">
