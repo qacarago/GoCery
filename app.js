@@ -188,8 +188,6 @@ function removeItem(productName) {
     updateCartDisplay();
 }
 
-document.addEventListener('DOMContentLoaded', updateCartDisplay);
-
 
 // Streak System
 window.streak_counter = document.querySelector('#streak-no');
