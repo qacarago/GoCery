@@ -196,21 +196,36 @@ window.streak_counter = document.querySelector('#streak-no');
 window.counter = 0; 
 
 function calculateDiscountPercentage(streak) {
-    if (streak >= 12) {
+    const card = document.querySelector('#file-upload').value;
+    if (streak >= 12 && card) {
+        return 0.27; // 27% off
+    } else if (streak >= 12) {
         return 0.07; // 7% off
+    } else if (streak >= 10 && card) {
+        return 0.26; // 26% off
     } else if (streak >= 10) {
         return 0.06; // 6% off
+    } else if (streak >= 8 && card) {
+        return 0.25; // 25% off
     } else if (streak >= 8) {
         return 0.05; // 5% off
+    } else if (streak >= 6 && card) {
+        return 0.24; // 24% off
     } else if (streak >= 6) {
         return 0.04; // 4% off
+    } else if (streak >= 4 && card) {
+        return 0.23; // 23% off
     } else if (streak >= 4) {
         return 0.03; // 3% off
-    } else if (streak >= 2) {
+    }  else if (streak >= 2 && card) {
+        return 0.22; // 22% off
+    }  else if (streak >= 2) {
         return 0.02; // 2% off
+    }  else if (card) {
+        return 0.20; // 20% off
     } else {
         return 0.00; // 0% off
-    }
+    } 
 }
 
 
@@ -321,4 +336,29 @@ function placeOrder() {
 function paymentCancel() {
     const order_container = document.querySelector('#payment-container');
     order_container.style.display = 'none';
+}
+
+
+// Slide Show
+const ad_img = ['Category/AD1.png', 'Category/AD2.png', 'Category/AD3.png'];
+let ad_container = document.querySelector('#adImage');
+let currentIndex = 0; 
+
+
+if (ad_container) {
+
+    function changeImage() {
+
+        ad_container.setAttribute('src', ad_img[currentIndex]);
+
+        currentIndex++;
+
+        if (currentIndex >= ad_img.length) {
+            currentIndex = 0;
+        }
+    }
+    setInterval(changeImage, 4000); 
+
+} else {
+    console.error("Image container with ID 'adImage' not found.");
 }
